@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport" />
+        <link rel="stylesheet" type="text/css" href="/html/css/phone.css" />
+        <title>Where does this show up?</title>
+    </head>
+    <body class="u" onload="init();">
+        <div id="main">
+            <center>
+                <div id="time">Time</div>
+                <div id="date">Date</div>
+                <div id="poke">
+                    <div id="pokeChild">Poke</div>
+                </div>
+            </center>
+        </div>
+        <script type="text/javascript">
+            var init = function () {
+                var time = document.getElementById("time");
+                var date = document.getElementById("date");
+
+                var loop = function () {
+                    var d = new Date();
+                    var h = d.getHours();
+                    var m = d.getMinutes();
+                    var s = d.getSeconds();
+
+                    var t = (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+
+                    time.innerHTML = t;
+
+                    var day = d.getDate();
+                    var month = d.getMonth() + 1;
+                    var year = d.getFullYear();
+
+                    var l = (day < 10 ? "0" + day : day)
+                    + "/" + (month < 10 ? "0" + month : month)
+                    + "/" + (year < 10 ? "0" + year : year);
+
+                    date.innerHTML = l;
+
+                    var _t = setTimeout(loop, 1000);
+                }
+
+                loop();
+            }
+        </script>
+    </body>
+</html>

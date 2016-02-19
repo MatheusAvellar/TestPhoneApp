@@ -1,0 +1,81 @@
+﻿@media all and (orientation:portrait) {
+    @-ms-viewport {
+        /*width: 320px;*/
+        width: device-width;
+        user-zoom: fixed;
+        max-zoom: 1;
+        min-zoom: 1;
+    }
+}
+
+@media all and (orientation:landscape) {
+    @-ms-viewport {
+        /*width: 480px;*/
+        width: device-width;
+        user-zoom: fixed;
+        max-zoom: 1;
+        min-zoom: 1;
+    }
+}
+
+.u {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    cursor: default;
+}
+
+html, body {
+    height: 100%;
+    width: 90%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-size: 11pt;
+    font-family: "Segoe WP";
+    letter-spacing: 0.02em;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+#main {
+    padding: 20px;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+#time, #date {
+    font-size: 50px;
+    width: 80vw;
+    margin-left: 10vw;
+    font-family: monospace;
+}
+
+#poke {
+    width: 50vw;
+    height: 150px;
+    background: #e74c3c;
+    transform: translateY(50%);
+    border-bottom: 20px solid #c0392b;
+    transition: border-width .1s ease-in, transform .1s ease-in;
+}
+
+#poke div {
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    transform: translateY(50%);
+    pointer-events: none;
+    text-shadow: 0 -2px 0 #555;
+}
+
+#poke:active {
+    background-color: #c0392b;
+    transform: translateY(70%);
+    border-bottom: 0px solid #c0392b;
+}
